@@ -71,6 +71,18 @@ std::string subtractBinary(std::string a, std::string b) {
     return result;
 }
 
+std::string multiplyBinary(std::string a, std::string b) { 
+    std::string result = "0"; 
+ 
+    for (int i = b.length() - 1; i >= 0; i--) { 
+        if (b[i] == '1') { 
+            result = addBinary(result, a); 
+        } 
+        a = a + "0"; 
+    } 
+ 
+    return result; 
+} 
 
 std::string divideBinary(std::string a, std::string b) {
     std::string quotient = "";
@@ -101,6 +113,7 @@ int main() {
 
     std::cout << "Sum: " << addBinary(num1, num2) << std::endl;
     std::cout << "Difference: " << subtractBinary(num1, num2) << std::endl;
+    std::cout << "Product: " << multiplyBinary(num1, num2) << std::endl; 
     std::cout << "Quotient: " << divideBinary(num1, num2) << std::endl;
 
     return 0;
